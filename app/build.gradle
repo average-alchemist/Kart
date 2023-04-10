@@ -1,6 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlinx-serialization'
 }
 
 android {
@@ -9,10 +12,10 @@ android {
 
     defaultConfig {
         applicationId "io.aethibo.kart"
-        minSdk 28
-        targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion buildConfig.minSdk
+        targetSdkVersion buildConfig.targetSdk
+        versionCode buildConfig.version.code
+        versionName buildConfig.version.name
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -37,7 +40,7 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.2.0'
+        kotlinCompilerExtensionVersion versions.composeCompilerVersion
     }
     packagingOptions {
         resources {
@@ -47,17 +50,43 @@ android {
 }
 
 dependencies {
+    // Android
+    implementation libs.coreKtx
+    implementation libs.lifecycleRuntime
+    implementation libs.activityCompose
+    implementation libs.coroutines
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
-    implementation 'androidx.activity:activity-compose:1.3.1'
-    implementation "androidx.compose.ui:ui:$compose_version"
-    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
-    implementation 'androidx.compose.material3:material3:1.0.0-alpha11'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
-    debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
-    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
+    // Compose
+    implementation libs.composeUi
+    implementation libs.composeMaterial
+    implementation libs.composeToolingPreview
+    implementation libs.composeNavigation
+    implementation libs.composeNavigationHilt
+
+    // Dependencies
+    implementation libs.timber
+    implementation libs.coil
+
+    // Networking
+    implementation libs.retrofit
+    implementation libs.kotlinXSerialization
+    implementation libs.kotlinXSerializationConverter
+    implementation libs.okHttpLoggingInterceptor
+
+    // Hilt
+    implementation libs.hilt
+    kapt libs.hiltCompiler
+
+    // Testing
+    testImplementation libs.coroutinesTest
+    testImplementation libs.junitTest
+
+    // Android Testing
+    androidTestImplementation libs.extJunitTest
+    androidTestImplementation libs.espressoTest
+    androidTestImplementation libs.composeUiJunitTest
+
+    // Debug
+    debugImplementation libs.composeUiToolingDebug
+    debugImplementation libs.composeUiManifestDebug
 }

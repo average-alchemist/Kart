@@ -1,0 +1,126 @@
+ext.buildConfig = [
+        'minSdk'   : 28,
+        'targetSdk': 33,
+
+        'version'  : [
+                'major': 1,
+                'minor': 0,
+                'patch': 0,
+                'beta' : 0,
+                'build': 0
+        ]
+]
+
+ext.buildConfig.version['code'] = buildConfig.version.major * 10000000 +
+        buildConfig.version.minor * 100000 +
+        buildConfig.version.patch * 1000 +
+        buildConfig.version.beta * 100 +
+        buildConfig.version.build
+
+ext.buildConfig.version['name'] = "${buildConfig.version.major}.${buildConfig.version.minor}.${buildConfig.version.patch}.${buildConfig.version.code}"
+
+ext.versions = [
+
+        /**
+         * Android
+         */
+        coreKtxVersion                      : '1.10.0',
+        lifecycleRuntimeVersion             : '2.6.1',
+        activityComposeVersion              : '1.7.0',
+        coroutinesVersion                   : '1.6.4',
+
+        /**
+         * Compose
+         */
+        composeVersion                      : '1.5.0-alpha02',
+        composeMaterialVersion              : '1.1.0-beta02',
+        composeCompilerVersion              : '1.4.4',
+        composeNavigationVersion            : '2.5.3',
+        composeNavigationHiltVersion        : '1.0.0',
+
+        /**
+         * Dependencies
+         */
+        coilVersion                         : '2.3.0',
+        timberVersion                       : '5.0.1',
+
+        /**
+         * Retrofit, KotlinX, and OkHttp
+         */
+        retrofitVersion                     : '2.9.0',
+        kotlinxSerializationVersion         : '1.5.0',
+        kotlinxSerializationVersionConverter: '0.8.0',
+        okHttpLoggingInterceptorVersion     : '5.0.0-alpha.10',
+
+        /**
+         * Hilt
+         */
+        hiltVersion                         : '2.45',
+
+        /**
+         * Testing
+         */
+        coroutinesTestVersion               : '1.6.4',
+        junitTestVersion                    : '4.13.2',
+        extJunitTetVersion                  : '1.1.5',
+        espressoTestVersion                 : '3.5.1',
+]
+
+ext.libs = [
+
+        /**
+         * Android
+         */
+        coreKtx                      : "androidx.core:core-ktx:${versions.coreKtxVersion}",
+        lifecycleRuntime             : "androidx.lifecycle:lifecycle-runtime-ktx:${versions.lifecycleRuntimeVersion}",
+        activityCompose              : "androidx.activity:activity-compose:${versions.activityComposeVersion}",
+        coroutines                   : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutinesVersion}",
+
+        /**
+         * Compose
+         */
+        composeUi                    : "androidx.compose.ui:ui:${versions.composeVersion}",
+        composeMaterial              : "androidx.compose.material3:material3:${versions.composeMaterialVersion}",
+        composeToolingPreview        : "androidx.compose.ui:ui-tooling-preview:${versions.composeVersion}",
+        composeNavigation            : "androidx.navigation:navigation-compose:${versions.composeNavigationVersion}",
+        composeNavigationHilt        : "androidx.hilt:hilt-navigation-compose:${versions.composeNavigationHiltVersion}",
+
+        /**
+         * Dependencies
+         */
+        timber                       : "com.jakewharton.timber:timber:${versions.timberVersion}",
+        coil                         : "io.coil-kt:coil-compose:${versions.coilVersion}",
+
+        /**
+         * Retrofit, KotlinX, OkHttp
+         */
+        retrofit                     : "com.squareup.retrofit2:retrofit:${versions.retrofitVersion}",
+        kotlinXSerialization         : "org.jetbrains.kotlinx:kotlinx-serialization-json:${versions.kotlinxSerializationVersion}",
+        kotlinXSerializationConverter: "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:${versions.kotlinxSerializationVersionConverter}",
+        okHttpLoggingInterceptor     : "com.squareup.okhttp3:logging-interceptor:${versions.okHttpLoggingInterceptorVersion}",
+
+        /**
+         * Hilt
+         */
+        hilt                         : "com.google.dagger:hilt-android:${versions.hiltVersion}",
+        hiltCompiler                 : "com.google.dagger:hilt-android-compiler:${versions.hiltVersion}",
+
+        /**
+         * Testing
+         */
+        coroutinesTest               : "org.jetbrains.kotlinx:kotlinx-coroutines-test:${versions.coroutinesTestVersion}",
+        junitTest                    : "junit:junit:${versions.junitTestVersion}",
+
+        /**
+         * Android Testing
+         */
+        extJunitTest                 : "androidx.test.ext:junit:${versions.extJunitTetVersion}",
+        espressoTest                 : "androidx.test.espresso:espresso-core:${versions.espressoTestVersion}",
+        composeUiJunitTest           : "androidx.compose.ui:ui-test-junit4:${versions.composeVersion}",
+
+        /**
+         * Debug
+         */
+        composeUiToolingDebug        : "androidx.compose.ui:ui-tooling:${versions.composeVersion}",
+        composeUiManifestDebug       : "androidx.compose.ui:ui-test-manifest:${versions.composeVersion}",
+]
