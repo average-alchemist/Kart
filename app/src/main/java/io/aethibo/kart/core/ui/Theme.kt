@@ -1,4 +1,4 @@
-package io.aethibo.kart.ui.theme
+package io.aethibo.kart.core.ui
 
 import android.app.Activity
 import android.os.Build

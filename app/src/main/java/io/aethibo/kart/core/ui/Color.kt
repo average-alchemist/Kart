@@ -1,4 +1,4 @@
-package io.aethibo.kart.ui.theme
+package io.aethibo.kart.core.ui
 
 import androidx.compose.ui.graphics.Color
 
