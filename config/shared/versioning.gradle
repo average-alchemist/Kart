@@ -72,7 +72,7 @@ ext.libs = [
          * Android
          */
         coreKtx                      : "androidx.core:core-ktx:${versions.coreKtxVersion}",
-        lifecycleRuntime             : "androidx.lifecycle:lifecycle-runtime-ktx:${versions.lifecycleRuntimeVersion}",
+        lifecycleRuntime             : "androidx.lifecycle:lifecycle-runtime-compose:${versions.lifecycleRuntimeVersion}",
         activityCompose              : "androidx.activity:activity-compose:${versions.activityComposeVersion}",
         coroutines                   : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutinesVersion}",
 
