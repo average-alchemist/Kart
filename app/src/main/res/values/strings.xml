@@ -5,4 +5,11 @@
     <string name="error_default">Something went wrong! Please try again</string>
     <string name="fetch_products">Fetch products</string>
     <string name="what_to_do_now">What to do now?</string>
+    <string name="search_for_product">Search for product</string>
+    <string name="search_content_description">Search for products</string>
+    <string name="new_collection">New\nCollection</string>
+    <string name="shop_now">Shop Now</string>
+    <string name="commercial_placeholder_image"><![CDATA[https://images.unsplash.com/photo-1559310278-18a9192d909f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80]]></string>
+    <string name="categories">Categories</string>
+    <string name="view_all">View all</string>
 </resources>

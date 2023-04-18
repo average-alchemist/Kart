@@ -17,14 +17,21 @@ class MainActivity : ComponentActivity() {
       super.onCreate(savedInstanceState)
       setContent {
          KartTheme {
-            // A surface container using the 'background' color from the theme
             Surface(
                modifier = Modifier.fillMaxSize(),
                color = MaterialTheme.colorScheme.background
             ) {
-               ProductsScreen() { productId ->
+               ProductsScreen(
+                  onProductClick = { productId ->
 
-               }
+                  },
+                  onCommercialItemClick = {
+
+                  },
+                  onCategoryItemClick = { category ->
+
+                  }
+               )
             }
          }
       }
