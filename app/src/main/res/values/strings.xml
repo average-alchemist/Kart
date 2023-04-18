@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Kart</string>
+    <string name="loading_placeholder">Please be patient while we\'re fetching some products for you</string>
+    <string name="error_fetching_products">Something went wrong while trying to fetch products. Check options bellow for additional support.</string>
+    <string name="error_default">Something went wrong! Please try again</string>
+    <string name="fetch_products">Fetch products</string>
+    <string name="what_to_do_now">What to do now?</string>
 </resources>
