@@ -70,10 +70,10 @@ dependencies {
     implementation libs.coil
 
     // Networking
-    implementation libs.retrofit
-    implementation libs.kotlinXSerialization
-    implementation libs.kotlinXSerializationConverter
-    implementation libs.okHttpLoggingInterceptor
+    implementation libs.ktorAndroid
+    implementation libs.ktorSerialization
+    implementation libs.ktorLogging
+    implementation libs.ktorContentNegitiation
 
     // Hilt
     implementation libs.hilt
