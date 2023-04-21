@@ -11,25 +11,19 @@ import io.aethibo.kart.features.product.domain.usecase.deleteProductById
 import io.aethibo.kart.features.product.domain.usecase.getProductById
 import io.aethibo.kart.features.products.domain.usecase.GetProductsUseCase
 import io.aethibo.kart.features.products.domain.usecase.getProducts
-import io.aethibo.kart.features.shared.data.remote.api.DummyApiService
+import io.aethibo.kart.features.shared.data.remote.ProductsRemoteDatasource
+import io.aethibo.kart.features.shared.data.remote.ProductsRemoteDatasourceImpl
 import io.aethibo.kart.features.shared.data.repository.ProductsRepositoryImpl
 import io.aethibo.kart.features.shared.domain.repository.ProductsRepository
 import io.aethibo.kart.features.shared.domain.usecase.AddProductUseCase
 import io.aethibo.kart.features.shared.domain.usecase.UpdateProductByIdUseCase
 import io.aethibo.kart.features.shared.domain.usecase.addProduct
 import io.aethibo.kart.features.shared.domain.usecase.updateProductById
-import retrofit2.Retrofit
 import javax.inject.Singleton
 
 @Module(includes = [ProductsModule.BindsModule::class])
 @InstallIn(SingletonComponent::class)
 object ProductsModule {
-
-   @Provides
-   @Singleton
-   fun provideProductsApi(retrofit: Retrofit): DummyApiService {
-      return retrofit.create(DummyApiService::class.java)
-   }
 
    @Provides
    fun provideGetProductsUseCase(productsRepository: ProductsRepository): GetProductsUseCase {
@@ -73,5 +67,9 @@ object ProductsModule {
       @Binds
       @Singleton
       fun bindProductsRepository(impl: ProductsRepositoryImpl): ProductsRepository
+
+      @Binds
+      @Singleton
+      fun bindProductsRemoteDataSource(impl: ProductsRemoteDatasourceImpl): ProductsRemoteDatasource
    }
 }
