@@ -31,6 +31,7 @@ fun ProductsContent(
          items(items = products) { product ->
             ProductItem(product, onProductClick)
          }
+         item { GenericFooter() }
       }
    )
 }
