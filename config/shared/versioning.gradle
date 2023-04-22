@@ -24,7 +24,7 @@ ext.versions = [
         /**
          * Android
          */
-        coreKtxVersion                      : '1.10.0',
+        coreKtxVersion                      : '1.11.0-alpha02',
         lifecycleRuntimeVersion             : '2.6.1',
         activityComposeVersion              : '1.7.0',
         coroutinesVersion                   : '1.6.4',
@@ -35,7 +35,7 @@ ext.versions = [
         composeVersion                      : '1.5.0-alpha02',
         composeMaterialVersion              : '1.1.0-beta02',
         composeCompilerVersion              : '1.4.4',
-        composeNavigationVersion            : '2.5.3',
+        composeNavigationVersion            : '2.6.0-beta01',
         composeNavigationHiltVersion        : '1.0.0',
 
         /**
