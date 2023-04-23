@@ -5,10 +5,6 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import io.aethibo.kart.features.manageproduct.domain.usecase.AddProductUseCase
-import io.aethibo.kart.features.manageproduct.domain.usecase.UpdateProductByIdUseCase
-import io.aethibo.kart.features.manageproduct.domain.usecase.addProduct
-import io.aethibo.kart.features.manageproduct.domain.usecase.updateProductById
 import io.aethibo.kart.features.product.domain.usecase.DeleteProductByIdUseCase
 import io.aethibo.kart.features.product.domain.usecase.GetProductByIdUseCase
 import io.aethibo.kart.features.product.domain.usecase.deleteProductById
@@ -18,6 +14,10 @@ import io.aethibo.kart.features.products.domain.usecase.getProducts
 import io.aethibo.kart.features.shared.data.remote.api.DummyApiService
 import io.aethibo.kart.features.shared.data.repository.ProductsRepositoryImpl
 import io.aethibo.kart.features.shared.domain.repository.ProductsRepository
+import io.aethibo.kart.features.shared.domain.usecase.AddProductUseCase
+import io.aethibo.kart.features.shared.domain.usecase.UpdateProductByIdUseCase
+import io.aethibo.kart.features.shared.domain.usecase.addProduct
+import io.aethibo.kart.features.shared.domain.usecase.updateProductById
 import retrofit2.Retrofit
 import javax.inject.Singleton
 

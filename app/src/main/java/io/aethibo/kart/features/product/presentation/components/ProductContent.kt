@@ -8,15 +8,17 @@ import io.aethibo.kart.core.ui.KartTheme
 import io.aethibo.kart.features.shared.domain.model.Product
 
 @Composable
-fun ProductContent(product: Product, modifier: Modifier = Modifier) {
+fun ProductContent(product: Product, modifier: Modifier = Modifier, onAddToCartClick: () -> Unit) {
    Column {
-      ProductThumbnail(image = product.thumbnail, modifier = modifier)
+      ProductThumbnail(images = product.images, modifier = modifier)
       ProductDetailContent(
          product.category,
          product.title,
          product.rating,
          product.description,
-         modifier = modifier
+         product.price.toString(),
+         modifier = modifier,
+         onAddToCartClick = onAddToCartClick
       )
    }
 }
@@ -38,6 +40,7 @@ fun ProductContentScreenPreview() {
       title = "Galaxy S23 Pro Max"
    )
    KartTheme {
-      ProductContent(product = product)
+      ProductContent(product = product) {
+      }
    }
 }

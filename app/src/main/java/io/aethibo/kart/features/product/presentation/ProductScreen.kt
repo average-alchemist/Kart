@@ -22,7 +22,8 @@ fun ProductScreen(id: Int?, viewModel: ProductViewModel = hiltViewModel()) {
       state = state,
       onErrorClick = { productId ->
          viewModel.onIntent(ProductIntents.GetProductById(productId))
-      }
+      },
+      onAddToCartClick = {}
    )
 }
 
@@ -30,10 +31,11 @@ fun ProductScreen(id: Int?, viewModel: ProductViewModel = hiltViewModel()) {
 fun ProductScreen(
    state: ProductUiState,
    onErrorClick: (Int) -> Unit,
+   onAddToCartClick: () -> Unit
 ) {
    when {
       state.isLoading -> LoadingPlaceholder()
-      state.product != null -> ProductContent(state.product)
+      state.product != null -> ProductContent(state.product, onAddToCartClick = onAddToCartClick)
       state.isError -> ErrorPlaceholder(onErrorClick = { state.product?.id?.let(onErrorClick) })
    }
 }
