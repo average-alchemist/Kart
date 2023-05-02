@@ -61,11 +61,7 @@ fun ProductItem(product: Product, onProductClick: (Int) -> Unit, modifier: Modif
                text = product.title,
                style = MaterialTheme.typography.titleLarge,
                maxLines = 1,
-               overflow = TextOverflow.Ellipsis
-            )
-            Text(
-               text = "$${product.price}",
-               style = MaterialTheme.typography.displaySmall,
+               overflow = TextOverflow.Ellipsis,
                fontWeight = FontWeight.Bold
             )
          }
