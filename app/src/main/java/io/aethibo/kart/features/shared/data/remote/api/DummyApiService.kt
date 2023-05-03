@@ -6,7 +6,7 @@ import io.aethibo.kart.features.shared.data.remote.model.response.ProductsRespon
 import retrofit2.http.*
 
 interface DummyApiService {
-   @GET("products/category/furniture")
+   @GET("products")
    suspend fun getProducts(): ProductsResponse
 
    @GET("products/{id}")
